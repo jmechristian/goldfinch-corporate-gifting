@@ -1,6 +1,36 @@
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 
 function App() {
+  const [formSubmited, setFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        'service_pmwa7qn',
+        'template_njuvwx5',
+        formRef.current,
+        'ARes42PsI77aAMQEV'
+      )
+      .then(
+        (result) => {
+          if (result.status === 200) {
+            formRef.current.reset();
+            setFormSubmitted(true);
+          }
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   const variants = {
     hidden: {
       opacity: 0,
@@ -26,7 +56,7 @@ function App() {
       y: 0,
       transition: {
         type: 'spring',
-        stiffness: 19,
+        stiffness: 10,
         mass: 1,
         damping: 5,
         delay: 0.5,
@@ -61,10 +91,9 @@ function App() {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        stiffness: 19,
-        mass: 1,
-        damping: 5,
+        type: 'tween',
+        ease: 'circOut',
+        duration: 1,
         delay: 1.2,
       },
     },
@@ -169,8 +198,20 @@ function App() {
           Curated collections of boutique gifts at scale, to meet your needs.
         </motion.div>
       </div>
-      <div className='bg-zinc-900 flex justify-center '>
-        <div className='flex flex-col md:flex-row p-12 gap-8 xl:p-0 xl:py-12 lg:max-w-4xl lg:mx-auto xl:mx-auto'>
+
+      {/* MidBar */}
+      <motion.div
+        className='bg-zinc-900 flex justify-center'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 1.5,
+          duration: 0.4,
+          type: 'tween',
+          ease: 'linear',
+        }}
+      >
+        <div className='flex flex-col md:flex-row p-12 gap-8 xl:p-0 xl:py-12 lg:max-w-5xl lg:mx-auto xl:mx-auto'>
           <div className='border border-gray-400 hidden xl:block'></div>
           <div className='flex flex-col gap-3'>
             <div className='flex items-center gap-3'>
@@ -212,6 +253,80 @@ function App() {
             <div className='text-gray-400 xl:text-lg font-canela xl:leading-tight'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Form */}
+      <div>
+        <div className='flex flex-col lg:grid lg:grid-cols-6 py-20 lg:py-24 gap-7 lg:max-w-5xl lg:mx-auto xl:mx-auto'>
+          <div className='text-5xl md:text-6xl xl:text-7xl font-canela text-black font-light px-12 lg:col-span-2'>
+            Get Gifting
+          </div>
+          <div className='flex flex-col px-12 lg:col-span-4'>
+            <form
+              className='grid grid-cols-1 lg:grid-cols-6 w-full gap-y-9 lg:gap-x-6'
+              ref={formRef}
+              onSubmit={sendEmail}
+            >
+              <input
+                type='text'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
+                placeholder='name'
+                name='name'
+              />
+              <input
+                type='email'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
+                placeholder='email'
+                name='email'
+              />
+              <input
+                type='date'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                placeholder='date needed'
+                name='date_needed'
+              />
+              <input
+                type='text'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                placeholder='quantity'
+                name='quantity'
+              />
+              <input
+                type='text'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                placeholder='budget'
+                name='budget'
+              />
+              <textarea
+                rows={4}
+                placeholder='description'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-6'
+                name='description'
+              />
+              {!formSubmited ? (
+                <button
+                  type='submit'
+                  className='bg-black flex justify-center items-center rounded-md lg:col-span-2'
+                  value='Send'
+                >
+                  <div className='text-white text-2xl font-engravers px-6 py-4 leading-none -mt-1'>
+                    {loading ? 'Submitting...' : 'Inquire'}
+                  </div>
+                </button>
+              ) : (
+                <button
+                  type='submit'
+                  className='bg-gray-500 flex justify-center items-center rounded-md lg:col-span-6'
+                  value='Send'
+                >
+                  <div className='text-white text-2xl font-engravers px-6 py-4 leading-none -mt-1'>
+                    Thank You For Your Submission!
+                  </div>
+                </button>
+              )}
+            </form>
           </div>
         </div>
       </div>
