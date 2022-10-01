@@ -41,7 +41,7 @@ function App() {
         delay: 0.5,
         staggerChildren: 0.25,
         staggerDirection: 1,
-        delayChildren: 0.45,
+        delayChildren: 0.75,
       },
     },
   };
@@ -109,7 +109,7 @@ function App() {
 
   return (
     <section className='bg-base-light flex flex-col overflow-hidden'>
-      <div className='flex flex-col py-16 md:py-20 gap-3 lg:gap-5 xl:gap-7 items-center'>
+      <div className='flex flex-col py-12 md:py-16 gap-3 lg:gap-5 xl:gap-7 items-center'>
         <motion.div
           className='text-6xl md:text-7xl xl:text-8xl font-canela text-black font-light px-12'
           variants={textVariants}
@@ -136,7 +136,7 @@ function App() {
           layout
         >
           <motion.div
-            className='bg-gray-500 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 overflow-hidden rounded -translate-x-2 xl:-translate-x-8 translate-y-4 relative drop-shadow-2xl'
+            className='bg-gray-500 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 overflow-hidden rounded -translate-x-2 xl:-translate-x-8 translate-y-4 relative'
             style={{
               backgroundImage: `url('https://res.cloudinary.com/designadg/image/upload/v1664598716/goldfinch/LMB_9725_jho5u4.webp')`,
               backgroundSize: 'cover',
@@ -146,7 +146,7 @@ function App() {
             layout
           ></motion.div>
           <motion.div
-            className='bg-gray-300 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 overflow-hidden rounded translate-x-8 -translate-y-6 drop-shadow-2xl'
+            className='bg-gray-300 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 overflow-hidden rounded translate-x-8 -translate-y-6'
             style={{
               backgroundImage: `url('https://res.cloudinary.com/designadg/image/upload/v1664598717/goldfinch/LMB_9843_dogmt9.webp')`,
               backgroundSize: 'cover',
@@ -156,7 +156,7 @@ function App() {
             layout
           ></motion.div>
           <motion.div
-            className='bg-gray-500 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 overflow-hidden rounded translate-x-2 translate-y-10 drop-shadow-2xl relative z-50'
+            className='bg-gray-500 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 overflow-hidden rounded translate-x-2 translate-y-10 relative z-50'
             style={{
               backgroundImage: `url('https://res.cloudinary.com/designadg/image/upload/v1664598716/goldfinch/LMB_9715_ldb2dc.webp')`,
               backgroundSize: 'cover',
@@ -166,7 +166,7 @@ function App() {
             layout
           ></motion.div>
           <motion.div
-            className='bg-gray-300 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 rounded overflow-hidden drop-shadow-2xl'
+            className='bg-gray-300 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 rounded overflow-hidden'
             style={{
               backgroundImage: `url('https://res.cloudinary.com/designadg/image/upload/v1664598716/goldfinch/LMB_9751_o1dstu.webp')`,
               backgroundSize: 'cover',
@@ -176,7 +176,7 @@ function App() {
             layout
           ></motion.div>
           <motion.div
-            className='bg-gray-500 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 hidden md:block overflow-hidden rounded translate-x-7 -translate-y-7 drop-shadow-2xl'
+            className='bg-gray-500 w-1/4 md:w-1/5 h-32 md:h-48 lg:h-60 hidden md:block overflow-hidden rounded translate-x-7 -translate-y-7'
             style={{
               backgroundImage: `url('https://res.cloudinary.com/designadg/image/upload/v1664598716/goldfinch/LMB_9721_naidmq.webp')`,
               backgroundSize: 'cover',
