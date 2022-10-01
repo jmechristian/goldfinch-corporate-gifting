@@ -19,8 +19,8 @@ function App() {
         'ARes42PsI77aAMQEV'
       )
       .then(
-        (result) => {
-          if (result.status === 200) {
+        (response) => {
+          if (response.status === 200) {
             formRef.current.reset();
             setFormSubmitted(true);
           }
@@ -106,8 +106,6 @@ function App() {
       transition: { duration: 0.5, type: 'tween', ease: 'circIn' },
     },
   };
-
-  const barVariants = {};
 
   return (
     <section className='bg-base-light flex flex-col overflow-hidden'>
@@ -300,7 +298,7 @@ function App() {
                 name='budget'
               />
               <textarea
-                rows={4}
+                rows={3}
                 placeholder='description'
                 className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-6'
                 name='description'
