@@ -5,13 +5,16 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    assetsDir: '',
+    assetsDir: '/assets',
     sourcemap: false,
+    define: {
+      'process.env': {},
+    },
     lib: {
       entry: 'src/main.jsx',
       formats: ['iife'],
-      name: 'gf-corp-gifting',
-      fileName: 'gf-corp-gifting',
+      name: 'gfCorpGifting',
+      fileName: 'gf-corp-gifting.js',
     },
   },
 });
