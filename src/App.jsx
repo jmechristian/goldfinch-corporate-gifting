@@ -49,7 +49,7 @@ function App() {
   const textVariants = {
     textHidden: {
       opacity: 0,
-      y: 30,
+      y: 60,
     },
     showText: {
       opacity: 1,
@@ -203,9 +203,8 @@ function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          delay: 1.5,
+          delay: 2.25,
           duration: 0.25,
-          type: 'tween',
           ease: 'linear',
         }}
       >
