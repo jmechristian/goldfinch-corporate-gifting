@@ -108,7 +108,7 @@ function App() {
   };
 
   return (
-    <section className='bg-base-light flex flex-col overflow-hidden'>
+    <section className='bg-base-light flex flex-col overflow-hidden w-full'>
       <div className='flex flex-col py-12 md:py-16 gap-3 lg:gap-5 xl:gap-7 items-center'>
         <motion.div
           className='text-6xl md:text-7xl xl:text-8xl font-canela text-black font-light px-12'
@@ -268,38 +268,38 @@ function App() {
             >
               <input
                 type='text'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
                 placeholder='name'
                 name='name'
               />
               <input
                 type='email'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
                 placeholder='email'
                 name='email'
               />
               <input
                 type='date'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
                 placeholder='date needed'
                 name='date_needed'
               />
               <input
                 type='text'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
                 placeholder='quantity'
                 name='quantity'
               />
               <input
                 type='text'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
                 placeholder='budget'
                 name='budget'
               />
               <textarea
                 rows={3}
                 placeholder='description'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-6'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-6'
                 name='description'
               />
               {!formSubmited ? (

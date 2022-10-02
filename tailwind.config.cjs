@@ -4,9 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        engravers: 'Engravers Gothic',
-        holland: 'Holland',
-        canela: 'Canela',
+        engravers: 'EngraversGothicBT',
+        canela: 'Canela Web',
       },
       colors: {
         'base-light': '#f0f0f0',
