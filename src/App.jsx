@@ -38,7 +38,7 @@ function App() {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.5,
+        delay: 0.75,
         staggerChildren: 0.25,
         staggerDirection: 1,
         delayChildren: 0.75,
@@ -59,7 +59,7 @@ function App() {
         stiffness: 10,
         mass: 1,
         damping: 5,
-        delay: 0.5,
+        delay: 1,
       },
     },
   };
@@ -74,10 +74,10 @@ function App() {
       y: 0,
       transition: {
         type: 'spring',
-        stiffness: 19,
-        mass: 1,
+        stiffness: 100,
+        mass: 0.5,
         damping: 5,
-        delay: 0.85,
+        delay: 1,
       },
     },
   };
@@ -111,7 +111,7 @@ function App() {
     <section className='bg-base-light flex flex-col overflow-hidden'>
       <div className='flex flex-col py-12 md:py-16 gap-3 lg:gap-5 xl:gap-7 items-center'>
         <motion.div
-          className='text-6xl md:text-7xl xl:text-8xl font-canela text-black font-light px-12'
+          className='text-6xl md:text-7xl xl:text-9xl font-canela text-black font-light px-12'
           variants={textVariants}
           initial='textHidden'
           animate='showText'
