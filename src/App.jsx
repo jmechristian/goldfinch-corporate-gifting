@@ -103,7 +103,7 @@ function App() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.5, type: 'tween', ease: 'circIn' },
+      transition: { duration: 0.25, type: 'tween', ease: 'circIn' },
     },
   };
 
@@ -204,7 +204,7 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{
           delay: 1.5,
-          duration: 0.4,
+          duration: 0.25,
           type: 'tween',
           ease: 'linear',
         }}
