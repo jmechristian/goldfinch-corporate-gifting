@@ -49,16 +49,14 @@ function App() {
   const textVariants = {
     textHidden: {
       opacity: 0,
-      y: 30,
+      y: -30,
     },
     showText: {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        stiffness: 10,
-        mass: 1,
-        damping: 5,
+        ease: 'easeOut',
+        duration: 0.8,
         delay: 0.5,
       },
     },
@@ -67,17 +65,15 @@ function App() {
   const spanVariants = {
     textHidden: {
       opacity: 0,
-      y: 30,
+      y: -30,
     },
     showText: {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        stiffness: 19,
-        mass: 1,
-        damping: 5,
-        delay: 0.85,
+        ease: 'easeOut',
+        duration: 0.8,
+        delay: 0.8,
       },
     },
   };
@@ -91,7 +87,6 @@ function App() {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'tween',
         ease: 'circOut',
         duration: 1,
         delay: 1.2,
@@ -111,7 +106,7 @@ function App() {
     <section className='bg-base-light flex flex-col overflow-hidden w-full'>
       <div className='flex flex-col py-12 md:py-16 gap-3 lg:gap-5 xl:gap-7 items-center'>
         <motion.div
-          className='text-6xl md:text-7xl xl:text-8xl font-canela text-black font-light px-12'
+          className='text-6xl md:text-7xl xl:text-8xl font-canela text-black font-thin px-12'
           variants={textVariants}
           initial='textHidden'
           animate='showText'
@@ -119,7 +114,7 @@ function App() {
         >
           Gifting{' '}
           <motion.span
-            className='block md:inline-block ml-16 md:ml-3'
+            className='block md:inline-block ml-16 md:ml-3 font-thin'
             variants={spanVariants}
             initial='textHidden'
             animate='showText'
@@ -187,7 +182,7 @@ function App() {
           ></motion.div>
         </motion.div>
         <motion.div
-          className='text-lg md:text-2xl xl:text-3xl font-engravers leading-tight px-12 md:px-28 lg:max-w-3xl lg:mb-2 text-center'
+          className='text-lg text-black md:text-2xl xl:text-3xl font-engravers leading-tight px-12 md:px-28 lg:max-w-3xl lg:mb-2 text-center'
           variants={subtextVariants}
           initial='textHidden'
           animate='showText'
@@ -203,7 +198,7 @@ function App() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          delay: 2.25,
+          delay: 2,
           duration: 0.25,
           ease: 'linear',
         }}
@@ -257,7 +252,7 @@ function App() {
       {/* Form */}
       <div>
         <div className='flex flex-col lg:grid lg:grid-cols-6 py-20 lg:py-24 gap-7 lg:max-w-5xl lg:mx-auto xl:mx-auto'>
-          <div className='text-5xl md:text-6xl xl:text-7xl font-canela text-black font-light px-12 lg:col-span-2'>
+          <div className='text-5xl md:text-6xl xl:text-7xl font-canela text-black font-thin px-12 lg:col-span-2'>
             Get Gifting
           </div>
           <div className='flex flex-col px-12 lg:col-span-4'>
@@ -268,39 +263,75 @@ function App() {
             >
               <input
                 type='text'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
                 placeholder='name'
                 name='name'
+                style={{
+                  borderBottom: '1px solid #a3a3a3',
+                  borderRight: 0,
+                  borderLeft: 0,
+                  borderTop: 0,
+                }}
               />
               <input
                 type='email'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-3'
                 placeholder='email'
                 name='email'
+                style={{
+                  borderBottom: '1px solid #a3a3a3',
+                  borderRight: 0,
+                  borderLeft: 0,
+                  borderTop: 0,
+                }}
               />
               <input
-                type='date'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                type='text'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
                 placeholder='date needed'
                 name='date_needed'
+                style={{
+                  borderBottom: '1px solid #a3a3a3',
+                  borderRight: 0,
+                  borderLeft: 0,
+                  borderTop: 0,
+                }}
               />
               <input
                 type='text'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
                 placeholder='quantity'
                 name='quantity'
+                style={{
+                  borderBottom: '1px solid #a3a3a3',
+                  borderRight: 0,
+                  borderLeft: 0,
+                  borderTop: 0,
+                }}
               />
               <input
                 type='text'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-2'
                 placeholder='budget'
                 name='budget'
+                style={{
+                  borderBottom: '1px solid #a3a3a3',
+                  borderRight: 0,
+                  borderLeft: 0,
+                  borderTop: 0,
+                }}
               />
               <textarea
                 rows={3}
                 placeholder='description'
-                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-b-2 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-6'
+                className='font-canela text-xl text-neutral-500 bg-transparent border-b-neutral-400 border-r-0 border-t-0 border-l-0 placeholder:text-neutral-400 placeholder:text-2xl focus:ring-0 focus:border-black lg:col-span-6'
                 name='description'
+                style={{
+                  borderBottom: '1px solid #a3a3a3',
+                  borderRight: 0,
+                  borderLeft: 0,
+                  borderTop: 0,
+                }}
               />
               {!formSubmited ? (
                 <button
